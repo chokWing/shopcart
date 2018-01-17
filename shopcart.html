@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>购物车</title>
+    <link rel="stylesheet" type="text/css" href="css/aui.css">
+    <link rel="stylesheet" type="text/css" href="css/shopcart.css">
+
+</head>
+<body>
+<div id="app">
+    <div id="cart-top">
+        <a href="##" @click="toggle()">{{showFlag?'完成':'编辑'}}</a>
+    </div>
+    <div id="item-list-wrapper"><!---购物车列表包裹--->
+        <!------按商家分类------>
+        <div class="item-LTD">
+            <div class="item-head">
+                <input type="checkbox" class="aui-checkbox check">
+                <span class="co-name">澳门葡京旅行社</span>
+                <a href="##" class="edit">编辑</a>
+            </div>
+            <ul class="item-content">
+                <li class="list-item">
+                    <div class="circle">
+                        <input type="checkbox" class="aui-checkbox check">
+                    </div>
+                    <div class="item-main">
+                        <div class="item-img"><a href="#"><img src="images/cart/shopingcart_sg_1.png"></a></div>
+                        <div class="item-main-text">
+                            <a href="#" v-show="showFlag">
+                                <div class="flex">
+                                <span class="name">
+                                    香港海洋公园快闪票快闪票
+                                </span>
+                                    <div class="price">
+                                        <p class="now">mop 640</p>
+                                        <del class="old">mop 650</del>
+                                    </div>
+                                </div>
+                                <div class="flex desc">
+                                    <p> 门票：一日票+来回船票
+                                        成人票</p>
+                                    <span class="quantity">x 1</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-item">
+                    <div class="circle">
+                        <input type="checkbox" class="aui-checkbox check">
+                    </div>
+                    <div class="item-main">
+                        <div class="item-img"><a href="#"><img src="images/cart/shopingcart_sg_2.png"></a></div>
+                        <div class="item-main-text">
+                            <a href="#" v-show="showFlag">
+                                <div class="flex">
+                                <span class="name">
+                                    新濠影汇童梦天地
+                                </span>
+                                    <div class="price">
+                                        <p class="now">mop 135</p>
+                                        <del class="old">mop 145</del>
+                                    </div>
+                                </div>
+                                <div class="flex desc">
+                                    <p>门票：亲子票（1大1小）
+                                        周末</p>
+                                    <span class="quantity">x 1</span>
+                                </div>
+                            </a>
+                            <div class="info2 flex" v-show="!showFlag">
+                                <div class="count">
+                                    <div class="flex"><span class="decrease">-</span><input type="number"
+                                                                                            class="num"><span
+                                            class="add">+</span></div>
+                                    <div class="desc">
+                                        <p> 门票：一日票+来回船票
+                                            成人票</p>
+                                    </div>
+                                </div>
+                                <div class="del">删除</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="item-LTD">
+            <div class="item-head">
+                <input type="checkbox" class="aui-checkbox check">
+                <span class="co-name">澳门葡京旅行社</span>
+                <a href="##" class="edit">编辑</a>
+            </div>
+            <ul class="item-content">
+                <li class="list-item">
+                    <div class="circle">
+                        <input type="checkbox" class="aui-checkbox check">
+                    </div>
+                    <div class="item-main">
+                        <div class="item-img"><a href="#"><img src="images/cart/shopingcart_sg_1.png"></a></div>
+                        <div class="item-main-text">
+                            <a href="#">
+                                <div class="flex">
+                                <span class="name">
+                                    香港海洋公园快闪票快闪票
+                                </span>
+                                    <div class="price">
+                                        <p class="now">mop 640</p>
+                                        <del class="old">mop 650</del>
+                                    </div>
+                                </div>
+                                <div class="flex desc">
+                                    <p> 门票：一日票+来回船票
+                                        成人票</p>
+                                    <span class="quantity">x 1</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-item">
+                    <div class="circle">
+                        <input type="checkbox" class="aui-checkbox check">
+                    </div>
+                    <div class="item-main">
+                        <div class="item-img"><a href="#"><img src="images/cart/shopingcart_sg_2.png"></a></div>
+                        <div class="item-main-text">
+                            <a href="#">
+                                <div class="flex">
+                                <span class="name">
+                                    新濠影汇童梦天地
+                                </span>
+                                    <div class="price">
+                                        <p class="now">mop 135</p>
+                                        <del class="old">mop 145</del>
+                                    </div>
+                                </div>
+                                <div class="flex desc">
+                                    <p>门票：亲子票（1大1小）
+                                        周末</p>
+                                    <span class="quantity">x 1</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="js/shopcart.js"></script>
+<script>
+    let itemLTD = document.getElementsByClassName('item-LTD');
+    for (let i = 0; i < itemLTD.length; i++) {
+        let edit_a = itemLTD[i].getElementsByClassName('edit')[0];
+        let pannel = itemLTD[i].getElementsByClassName('item-main-text')[0];
+        let pannel_a = pannel.getElementsByTagName('a')[0];
+        edit_a.onclick = function () {
+            this.innerText = this.innerText === '编辑' ? '完成' : '编辑';
+            if (this.innerText === '完成') {
+                pannel_a.style.display = 'none';
+            } else {
+                pannel_a.style.display = 'block';
+            }
+        }
+    }
+</script>
+</body>
+</html>

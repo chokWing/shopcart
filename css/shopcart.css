@@ -1,0 +1,105 @@
+#cart-top {
+    background-color:#ff0000 ;
+    height: 2.2rem;
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+#cart-top a{
+    font-size: 0.75rem;
+    float: right;
+    margin-right: 0.75rem;
+    color: #fff;
+    line-height: 2.2rem;
+}
+/*购物车列表*/
+#item-list-wrapper{
+    margin-top: 2.2rem;
+    background: #eeeeee;
+}
+#item-list-wrapper input{
+    vertical-align: middle;
+}
+#item-list-wrapper input.check{
+    margin: 0 1rem;
+}
+#item-list-wrapper .edit{
+    float: right;
+    margin-right: 0.75rem;
+    font-size: 0.6rem;
+}
+.item-head{
+    height: 1.9rem;
+    background: #fff;
+    line-height: 1.9rem;
+}
+.item-content{
+    background-color: #fff;
+}
+.item-content .list-item{
+    height: 4.5rem;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.item-main{
+    display: flex;
+}
+.item-img{
+    height: 4rem;
+    width: 4rem;
+}
+.flex{
+    display: flex;
+}
+.item-main-text{
+    margin-left: 0.625rem;
+}
+.item-main-text .name{
+    width: 6.25rem;
+    font-size: 0.7rem;
+}
+.item-main-text .price{
+    font-size: 0.7rem;
+    margin-left: 2rem;
+}
+.item-main-text .desc{
+    font-size: 0.6rem;
+    color: #666;
+}
+.item-main-text .price .now{
+    color: #000;
+}
+.desc p {
+    width: 8rem;
+}
+.desc .quantity{
+    margin-left: 1rem;
+}
+del{
+    color:#666;
+}
+del.old{
+    font-size:.6rem;
+}
+
+.info2 .del{
+    width: 2.5rem;
+    height: 4.5rem;
+    background:#e71f19 ;
+    color: #fff;
+    text-align: center;
+    line-height: 4.5rem;
+    float: right;
+}
+
+.decrease{
+
+}
+.add{
+
+}
+input{
+
+}
