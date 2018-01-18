@@ -31,7 +31,7 @@
                     <div class="item-main">
                         <div class="item-img"><a href="#"><img src="images/cart/shopingcart_sg_1.png"></a></div>
                         <div class="item-main-text">
-                            <a href="#" class="info">
+                            <a href="#" class="info" >
                                 <div class="flex">
                                 <span class="name">
                                     香港海洋公园快闪票快闪票
@@ -217,6 +217,21 @@
             }
         }
     }
+    //顶部编辑
+    let topEdit =document.getElementById('cart-top').getElementsByTagName('a')[0];
+    topEdit.onclick=function () {
+        for (let i = 0; i < itemLTD.length; i++) {
+            let edit_a = itemLTD[i].getElementsByClassName('edit')[0];
+            edit_a.onclick();
+            if(topEdit.childNodes[0].nodeValue==='编辑'){
+                edit_a.style.display='none';
+            }else{
+                edit_a.style.display='flex';
+            }
+        }
+       // alert(topEdit.childNodes[0].nodeValue);
+    }
+
 </script>
 </body>
 </html>
