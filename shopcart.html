@@ -31,7 +31,7 @@
                     <div class="item-main">
                         <div class="item-img"><a href="#"><img src="images/cart/shopingcart_sg_1.png"></a></div>
                         <div class="item-main-text">
-                            <a href="#" v-show="showFlag">
+                            <a href="#" class="info">
                                 <div class="flex">
                                 <span class="name">
                                     香港海洋公园快闪票快闪票
@@ -47,6 +47,18 @@
                                     <span class="quantity">x 1</span>
                                 </div>
                             </a>
+                            <div class="info2 flex">
+                                <div class="count">
+                                    <div class="flex "><span class="decrease">-</span><input type="number"
+                                                                                             value="1" class="num"><span
+                                            class="add">+</span></div>
+                                    <div class="desc">
+                                        <p> 门票：一日票+来回船票
+                                            成人票</p>
+                                    </div>
+                                </div>
+                                <div class="del">删除</div>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -57,7 +69,7 @@
                     <div class="item-main">
                         <div class="item-img"><a href="#"><img src="images/cart/shopingcart_sg_2.png"></a></div>
                         <div class="item-main-text">
-                            <a href="#" v-show="showFlag">
+                            <a href="#" class="info">
                                 <div class="flex">
                                 <span class="name">
                                     新濠影汇童梦天地
@@ -73,11 +85,13 @@
                                     <span class="quantity">x 1</span>
                                 </div>
                             </a>
-                            <div class="info2 flex" v-show="!showFlag">
+                            <div class="info2 flex">
                                 <div class="count">
-                                    <div class="flex"><span class="decrease">-</span><input type="number"
-                                                                                            class="num"><span
-                                            class="add">+</span></div>
+                                    <div class="flex">
+                                        <span class="decrease">-</span>
+                                        <input type="number" value="1" class="num">
+                                        <span class="add">+</span>
+                                    </div>
                                     <div class="desc">
                                         <p> 门票：一日票+来回船票
                                             成人票</p>
@@ -105,7 +119,7 @@
                     <div class="item-main">
                         <div class="item-img"><a href="#"><img src="images/cart/shopingcart_sg_1.png"></a></div>
                         <div class="item-main-text">
-                            <a href="#">
+                            <a href="#" class="info">
                                 <div class="flex">
                                 <span class="name">
                                     香港海洋公园快闪票快闪票
@@ -121,6 +135,18 @@
                                     <span class="quantity">x 1</span>
                                 </div>
                             </a>
+                            <div class="info2 flex">
+                                <div class="count">
+                                    <div class="flex "><span class="decrease">-</span><input type="number"
+                                                                                             value="1" class="num"><span
+                                            class="add">+</span></div>
+                                    <div class="desc">
+                                        <p> 门票：一日票+来回船票
+                                            成人票</p>
+                                    </div>
+                                </div>
+                                <div class="del">删除</div>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -131,7 +157,7 @@
                     <div class="item-main">
                         <div class="item-img"><a href="#"><img src="images/cart/shopingcart_sg_2.png"></a></div>
                         <div class="item-main-text">
-                            <a href="#">
+                            <a href="#" class="info">
                                 <div class="flex">
                                 <span class="name">
                                     新濠影汇童梦天地
@@ -147,7 +173,22 @@
                                     <span class="quantity">x 1</span>
                                 </div>
                             </a>
+                            <div class="info2 flex">
+                                <div class="count">
+                                    <div class="flex">
+                                        <span class="decrease">-</span>
+                                        <input type="number" value="1" class="num">
+                                        <span class="add">+</span>
+                                    </div>
+                                    <div class="desc">
+                                        <p> 门票：一日票+来回船票
+                                            成人票</p>
+                                    </div>
+                                </div>
+                                <div class="del">删除</div>
+                            </div>
                         </div>
+
                     </div>
                 </li>
             </ul>
@@ -160,14 +201,19 @@
     let itemLTD = document.getElementsByClassName('item-LTD');
     for (let i = 0; i < itemLTD.length; i++) {
         let edit_a = itemLTD[i].getElementsByClassName('edit')[0];
-        let pannel = itemLTD[i].getElementsByClassName('item-main-text')[0];
-        let pannel_a = pannel.getElementsByTagName('a')[0];
         edit_a.onclick = function () {
             this.innerText = this.innerText === '编辑' ? '完成' : '编辑';
+            let pannel = itemLTD[i].getElementsByClassName('info');
             if (this.innerText === '完成') {
-                pannel_a.style.display = 'none';
+                for (let j = 0; j < pannel.length; j++) {
+                    pannel[j].style.display = 'none';
+                    pannel[j].nextElementSibling.style.display = 'flex';
+                }
             } else {
-                pannel_a.style.display = 'block';
+                for (let j = 0; j < pannel.length; j++) {
+                    pannel[j].style.display = 'block';
+                    pannel[j].nextElementSibling.style.display = 'none';
+                }
             }
         }
     }

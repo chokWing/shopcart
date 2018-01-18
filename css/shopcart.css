@@ -43,8 +43,10 @@
     align-items: center;
     margin-bottom: 10px;
 }
-.item-main{
+.item-content .list-item .item-main{
     display: flex;
+    flex: 1;
+    height: 100%;
 }
 .item-img{
     height: 4rem;
@@ -55,6 +57,7 @@
 }
 .item-main-text{
     margin-left: 0.625rem;
+    flex: 1;
 }
 .item-main-text .name{
     width: 6.25rem;
@@ -83,9 +86,14 @@ del{
 del.old{
     font-size:.6rem;
 }
-
+.info{
+    height: 4.5rem;
+}
+.info2{
+    display: none;
+}
 .info2 .del{
-    width: 2.5rem;
+    flex-basis: 2.5rem;
     height: 4.5rem;
     background:#e71f19 ;
     color: #fff;
@@ -93,13 +101,19 @@ del.old{
     line-height: 4.5rem;
     float: right;
 }
-
-.decrease{
-
+.count{
+    flex:1;
+    align-items: center;
 }
-.add{
 
+.decrease,.add{
+    flex:1;
+    text-align: center;
+    font-size:1.5rem ;
+    color: #666;
 }
-input{
-
+.info2 input[type=number]{
+    flex:1;
+    text-align: center;
+    font-size: 1rem;
 }
