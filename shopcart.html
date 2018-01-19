@@ -201,8 +201,13 @@
     let itemLTD = document.getElementsByClassName('item-LTD');
     for (let i = 0; i < itemLTD.length; i++) {
         let edit_a = itemLTD[i].getElementsByClassName('edit')[0];
-        edit_a.onclick = function () {
-            this.innerText = this.innerText === '编辑' ? '完成' : '编辑';
+        edit_a.onclick = function (flag) {
+            if(flag === event){
+                this.innerText = this.innerText === '编辑' ? '完成' : '编辑';
+
+            }else{
+                this.innerText = flag;
+            }
             let pannel = itemLTD[i].getElementsByClassName('info');
             if (this.innerText === '完成') {
                 for (let j = 0; j < pannel.length; j++) {
@@ -222,14 +227,15 @@
     topEdit.onclick=function () {
         for (let i = 0; i < itemLTD.length; i++) {
             let edit_a = itemLTD[i].getElementsByClassName('edit')[0];
-            edit_a.onclick();
-            if(topEdit.childNodes[0].nodeValue==='编辑'){
-                edit_a.style.display='none';
-            }else{
+            let flag=topEdit.childNodes[0].nodeValue;
+            flag=flag==='编辑'?'完成':'编辑';
+            edit_a.onclick(flag);
+            if(topEdit.childNodes[0].nodeValue==='完成'){
                 edit_a.style.display='flex';
+            }else{
+                edit_a.style.display='none';
             }
         }
-       // alert(topEdit.childNodes[0].nodeValue);
     }
 
 </script>
