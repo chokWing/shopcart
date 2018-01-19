@@ -31,7 +31,95 @@
                     <div class="item-main">
                         <div class="item-img"><a href="#"><img src="images/cart/shopingcart_sg_1.png"></a></div>
                         <div class="item-main-text">
-                            <a href="#" class="info" >
+                            <a href="#" class="info" style="display: none">
+                                <div class="flex">
+                                <span class="name">
+                                    香港海洋公园快闪票快闪票
+                                </span>
+                                    <div class="price">
+                                        <p class="now">mop 640</p>
+                                        <del class="old">mop 650</del>
+                                    </div>
+                                </div>
+                                <div class="flex desc">
+                                    <p> 门票：一日票+来回船票
+                                        成人票</p>
+                                    <span class="quantity">x 1</span>
+                                </div>
+                            </a>
+                            <div class="info2 flex" style="display: flex">
+                                <div class="count">
+                                    <div class="flex "><span class="decrease">-</span><input type="number"
+                                                                                             value="1" class="num"><span
+                                            class="add">+</span></div>
+                                    <div class="desc">
+                                        <p> 门票：一日票+来回船票
+                                            成人票</p>
+                                    </div>
+                                </div>
+                                <div class="del">删除</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-item">
+                    <div class="circle">
+                        <input type="checkbox" class="aui-checkbox check">
+                    </div>
+                    <div class="item-main">
+                        <div class="item-img"><a href="#"><img src="images/cart/shopingcart_sg_2.png"></a></div>
+                        <div class="item-main-text">
+                            <a href="#" class="info">
+                                <div class="flex">
+                                <span class="name">
+                                    新濠影汇童梦天地
+                                </span>
+                                    <div class="price">
+                                        <p class="now">mop 135</p>
+                                        <del class="old">mop 145</del>
+                                    </div>
+                                </div>
+                                <div class="flex desc">
+                                    <p>门票：亲子票（1大1小）
+                                        周末</p>
+                                    <span class="quantity">x 1</span>
+                                </div>
+                            </a>
+                            <div class="info2 flex">
+                                <div class="count">
+                                    <div class="flex">
+                                        <span class="decrease">-</span>
+                                        <input type="number" value="1" class="num">
+                                        <span class="add">+</span>
+                                    </div>
+                                    <div class="desc">
+                                        <p> 门票：一日票+来回船票
+                                            成人票</p>
+                                    </div>
+                                </div>
+                                <div class="del">删除</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="item-LTD">
+            <div class="item-head">
+                <input type="checkbox" class="aui-checkbox check">
+                <span class="co-name">澳门葡京旅行社</span>
+                <a href="##" class="edit">编辑</a>
+            </div>
+            <ul class="item-content">
+                <li class="list-item">
+                    <div class="circle">
+                        <input type="checkbox" class="aui-checkbox check">
+                    </div>
+                    <div class="item-main">
+                        <div class="item-img"><a href="#"><img src="images/cart/shopingcart_sg_1.png"></a></div>
+                        <div class="item-main-text">
+                            <a href="#" class="info">
                                 <div class="flex">
                                 <span class="name">
                                     香港海洋公园快闪票快闪票
@@ -194,50 +282,18 @@
             </ul>
         </div>
     </div>
+    <div id="cart-pay">
+        <div class="cart-pay-left">
+            <div class="total">
+                <input type="checkbox" class="aui-checkbox check" id="circle">
+                <label for="circle">全选</label>
+            </div>
+            <div class="totalCount-wrapper">合计:<span style="color:red;">mop</span>&nbsp;<span
+                    class="totalCount">0.00</span></div>
+        </div>
+        <div class="pay">结算(<span class="totalQuantity">0</span>)</div>
+    </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="js/shopcart.js"></script>
-<script>
-    let itemLTD = document.getElementsByClassName('item-LTD');
-    for (let i = 0; i < itemLTD.length; i++) {
-        let edit_a = itemLTD[i].getElementsByClassName('edit')[0];
-        edit_a.onclick = function (flag) {
-            if(flag === event){
-                this.innerText = this.innerText === '编辑' ? '完成' : '编辑';
-
-            }else{
-                this.innerText = flag;
-            }
-            let pannel = itemLTD[i].getElementsByClassName('info');
-            if (this.innerText === '完成') {
-                for (let j = 0; j < pannel.length; j++) {
-                    pannel[j].style.display = 'none';
-                    pannel[j].nextElementSibling.style.display = 'flex';
-                }
-            } else {
-                for (let j = 0; j < pannel.length; j++) {
-                    pannel[j].style.display = 'block';
-                    pannel[j].nextElementSibling.style.display = 'none';
-                }
-            }
-        }
-    }
-    //顶部编辑
-    let topEdit =document.getElementById('cart-top').getElementsByTagName('a')[0];
-    topEdit.onclick=function () {
-        this.innerText=this.innerText==='编辑'?'完成':'编辑';
-        let flag=this.innerText;
-        for (let i = 0; i < itemLTD.length; i++) {
-            let edit_a = itemLTD[i].getElementsByClassName('edit')[0];
-            edit_a.onclick(flag);//传过去的是完成
-            if(this.innerText==='编辑'){
-                edit_a.style.display='flex';
-            }else{
-                edit_a.style.display='none';
-            }
-        }
-    }
-
-</script>
 </body>
 </html>

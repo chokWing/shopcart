@@ -1,9 +1,13 @@
+#app::-webkit-scrollbar {
+    display: none;
+}
 #cart-top {
     background-color:#ff0000 ;
     height: 2.2rem;
     position: fixed;
     top:0;
     width: 100%;
+    z-index: 50;
 }
 #cart-top a{
     font-size: 0.75rem;
@@ -14,13 +18,13 @@
 }
 /*购物车列表*/
 #item-list-wrapper{
-    margin-top: 2.2rem;
+    margin: 2.2rem 0;
     background: #eeeeee;
 }
 #item-list-wrapper input{
     vertical-align: middle;
 }
-#item-list-wrapper input.check{
+ input.check{
     margin: 0 1rem;
 }
 #item-list-wrapper .edit{
@@ -116,4 +120,46 @@ del.old{
     flex:1;
     text-align: center;
     font-size: 1rem;
+}
+
+/*购物车底部支付面板*/
+#cart-pay{
+    width: 100%;
+    position: fixed;
+    height: 2.2rem;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+#cart-pay .pay{
+    flex-basis: 5rem;
+    background: #ff4500;
+    font-size: .7rem;
+    color: #fff;
+    height: 100%;
+    text-align: center;
+    line-height: 2.2rem;
+}
+.cart-pay-left{
+    flex:1;
+    background: #fff;
+    color: #000;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#cart-pay .cart-pay-left .total{
+    display: flex;
+    font-size: .7rem;
+
+}
+.totalCount-wrapper{
+    margin-right: 1.3rem;
+    font-size: .6rem;
+}
+.totalCount{
+    color:red;
+    font-size: .7rem;
 }
