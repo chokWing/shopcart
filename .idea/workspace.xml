@@ -20,8 +20,8 @@
       <file leaf-file-name="shopcart.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shopcart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="223" column="5" lean-forward="true" selection-start-line="223" selection-start-column="5" selection-end-line="223" selection-end-column="5" />
+            <state relative-caret-position="466">
+              <caret line="234" column="18" lean-forward="true" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#a#0;n#div#1;n#div#1;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -143,12 +143,20 @@
       <workItem from="1516195929743" duration="7143000" />
       <workItem from="1516258626358" duration="8000" />
       <workItem from="1516265857764" duration="6287000" />
-      <workItem from="1516327216515" duration="5699000" />
+      <workItem from="1516327216515" duration="7411000" />
     </task>
+    <task id="LOCAL-00001" summary="编辑功能BUG修复，（采用VUE）">
+      <created>1516333130123</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1516333130123</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19137000" />
+    <option name="totallyTimeSpent" value="20849000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -179,6 +187,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="编辑功能BUG修复，（采用VUE）" />
+    <option name="LAST_COMMIT_MESSAGE" value="编辑功能BUG修复，（采用VUE）" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -258,8 +270,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shopcart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="223" column="5" lean-forward="true" selection-start-line="223" selection-start-column="5" selection-end-line="223" selection-end-column="5" />
+        <state relative-caret-position="466">
+          <caret line="234" column="18" lean-forward="true" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#a#0;n#div#1;n#div#1;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />

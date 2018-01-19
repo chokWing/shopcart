@@ -13,7 +13,7 @@
 <body>
 <div id="app">
     <div id="cart-top">
-        <a href="##" @click="toggle()">{{showFlag?'完成':'编辑'}}</a>
+        <a href="##">编辑</a>
     </div>
     <div id="item-list-wrapper"><!---购物车列表包裹--->
         <!------按商家分类------>
@@ -225,12 +225,12 @@
     //顶部编辑
     let topEdit =document.getElementById('cart-top').getElementsByTagName('a')[0];
     topEdit.onclick=function () {
+        this.innerText=this.innerText==='编辑'?'完成':'编辑';
+        let flag=this.innerText;
         for (let i = 0; i < itemLTD.length; i++) {
             let edit_a = itemLTD[i].getElementsByClassName('edit')[0];
-            let flag=topEdit.childNodes[0].nodeValue;
-            flag=flag==='编辑'?'完成':'编辑';
-            edit_a.onclick(flag);
-            if(topEdit.childNodes[0].nodeValue==='完成'){
+            edit_a.onclick(flag);//传过去的是完成
+            if(this.innerText==='编辑'){
                 edit_a.style.display='flex';
             }else{
                 edit_a.style.display='none';
