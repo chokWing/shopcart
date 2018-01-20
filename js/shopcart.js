@@ -1,15 +1,18 @@
 window.onload=function () {
 //点击编辑事件
+    let itemWrapper=document.getElementById('item-list-wrapper');
     let itemLTD = document.getElementsByClassName('item-LTD'); //按商家获取
+    let itemArr=Array.prototype.slice.call(itemLTD); //转化为数组
+    let edit_a = document.getElementsByClassName('edit');
+
     for (let i = 0; i < itemLTD.length; i++) {
-        let edit_a = itemLTD[i].getElementsByClassName('edit')[0];
-        edit_a.onclick = function (flag) {
+        edit_a[i].onclick = function (flag) {
             if (flag === event) {
                 this.innerText = this.innerText === '编辑' ? '完成' : '编辑';
             } else {
                 this.innerText = flag;
             }
-            let pannel = itemLTD[i].getElementsByClassName('info');
+            let pannel = itemArr[i].getElementsByClassName('info');
             if (this.innerText === '完成') {
                 for (let j = 0; j < pannel.length; j++) {
                     pannel[j].style.display = 'none';
@@ -57,7 +60,7 @@ window.onload=function () {
                     break;
                 case 'del':
                     if(item.parentNode.childElementCount===1){
-                        item.parentNode.parentNode.parentNode.removeChild(item.parentNode.parentNode);
+                        itemWrapper.removeChild(item.parentNode.parentNode);
                     }
                     item.parentNode.removeChild(item);
             }
