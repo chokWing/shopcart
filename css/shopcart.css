@@ -127,10 +127,8 @@ del.old{
     width: 100%;
     position: fixed;
     height: 2.2rem;
-    bottom: 0;
-    left: 0;
+    bottom: -1px;
     display: flex;
-    align-items: center;
 }
 #cart-pay .pay{
     flex-basis: 5rem;
