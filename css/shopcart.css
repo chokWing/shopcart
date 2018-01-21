@@ -1,6 +1,3 @@
-#app::-webkit-scrollbar {
-    display: none;
-}
 #cart-top {
     background-color:#ff0000 ;
     height: 2.2rem;
@@ -20,6 +17,7 @@
 #item-list-wrapper{
     margin: 2.2rem 0;
     background: #eeeeee;
+    overflow-x:hidden ;
 }
 #item-list-wrapper input{
     vertical-align: middle;
@@ -71,9 +69,13 @@
     font-size: 0.7rem;
     margin-left: 1.3rem;
 }
+.item-main-text .price p{
+    color: #000;
+}
 .item-main-text .desc{
     font-size: 0.6rem;
     color: #666;
+    justify-content: space-between;
 }
 .item-main-text .price .now{
     color: #000;
@@ -81,7 +83,7 @@
 .desc p {
     width: 8rem;
 }
-.desc .quantity{
+.desc .quantity-w{
     margin-left: 1rem;
 }
 del{

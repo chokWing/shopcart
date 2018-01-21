@@ -1,14 +1,45 @@
 window.onload = function () {
-//点击编辑事件
+
     let itemWrapper = document.getElementById('item-list-wrapper');
     let itemLTD = document.getElementsByClassName('item-LTD'); //按商家获取
+    let item = document.getElementsByClassName('list-item'); //单个商品
     let itemArr = Array.prototype.slice.call(itemLTD); //转化为数组
     let edit_a = document.getElementsByClassName('edit');  //小编辑按钮
-    let totalQuantity=document.getElementsByClassName('totalQuantity')[0];  //计算按钮的数字
-    let totalCount=document.getElementsByClassName('totalQuantity')[0]; //总价格
+    let totalQuantity = document.getElementsByClassName('totalQuantity')[0];  //计算按钮的数字
+    let totalCount = document.getElementsByClassName('totalCount')[0]; //总价格
+    let inputSelected = document.getElementsByClassName("check"); //所有checkbox
 
-    //let quantity = document.getElementsByClassName('quantity');
+    //计算总价
+    function getTotal() {
+        let selected = 0;
+        let price = 0;
+        for (let i = 0; i < item.length; i++) {
+            if (item[i].getElementsByTagName('input')[0].checked) {
+                selected++;
+                price += parseInt(item[i].querySelector('.now').innerText) * parseInt(item[i].querySelector('.quantity').innerText);
+            }
+        }
+        totalQuantity.innerText = selected;
+        totalCount.innerText = price.toFixed(2);
+    }
 
+    //checkbox选框全选以及计算效果
+    for (let i = 0; i < inputSelected.length; i++) {
+        inputSelected[i].onchange = function () {
+            if (this.className.indexOf('checkLTD') > 0) {
+                let checkLTD = this.parentNode.parentNode.getElementsByClassName('check');
+                for (let j = 0; j < checkLTD.length; j++) {
+                    checkLTD[j].checked = this.checked;
+                }
+            } else if (this.className.indexOf('checkAll') > 0) {
+                for (let k = 0;k<inputSelected.length;k++) {
+                    inputSelected[k].checked=this.checked;
+                }
+            }
+            getTotal();
+        }
+    }
+    //点击编辑事件
     for (let i = 0; i < itemLTD.length; i++) {
         edit_a[i].onclick = function (flag) {
             if (flag === event) {
@@ -55,7 +86,7 @@ window.onload = function () {
             if (this.value < 1 || this.value === null) {
                 this.value = 1;
             }
-            quantity.innerText='x '+this.value.toString();
+            quantity.innerText = this.value.toString();
         }
 
         info2[i].onclick = function (e) {
@@ -66,12 +97,10 @@ window.onload = function () {
             switch (cls) {
                 case 'add':
                     input.value++;
-                    quantity.innerText='x '+input.value.toString();
                     break;
                 case 'decrease':
                     if (input.value > 1) {
                         input.value--;
-                        quantity.innerText='x '+input.value.toString();
                     }
                     break;
                 case 'del':
@@ -80,10 +109,9 @@ window.onload = function () {
                     }
                     item.parentNode.removeChild(item);
             }
+            quantity.innerText = input.value.toString();
+            getTotal();
         }
     }
-
-    //checkbox选框全选以及计算效果
-
 }
 
