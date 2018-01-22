@@ -129,8 +129,9 @@ del.old{
     width: 100%;
     position: fixed;
     height: 2.2rem;
-    bottom: -1px;
+    bottom: 44px;
     display: flex;
+    z-index: 50;
 }
 #cart-pay .pay{
     flex-basis: 5rem;

@@ -8,6 +8,7 @@ window.onload = function () {
     let totalQuantity = document.getElementsByClassName('totalQuantity')[0];  //计算按钮的数字
     let totalCount = document.getElementsByClassName('totalCount')[0]; //总价格
     let inputSelected = document.getElementsByClassName("check"); //所有checkbox
+    let checkAll = document.getElementsByClassName('checkAll')[0];
 
     //计算总价
     function getTotal() {
@@ -19,6 +20,11 @@ window.onload = function () {
                 price += parseInt(item[i].querySelector('.now').innerText) * parseInt(item[i].querySelector('.quantity').innerText);
             }
         }
+        //恢复全选状态
+        if (selected === item.length) {
+            checkAll.checked = true;
+        }
+
         totalQuantity.innerText = selected;
         totalCount.innerText = price.toFixed(2);
     }
@@ -26,14 +32,33 @@ window.onload = function () {
     //checkbox选框全选以及计算效果
     for (let i = 0; i < inputSelected.length; i++) {
         inputSelected[i].onchange = function () {
+            if (!this.checked) {
+                checkAll.checked = false;
+            }
             if (this.className.indexOf('checkLTD') > 0) {
                 let checkLTD = this.parentNode.parentNode.getElementsByClassName('check');
                 for (let j = 0; j < checkLTD.length; j++) {
                     checkLTD[j].checked = this.checked;
                 }
             } else if (this.className.indexOf('checkAll') > 0) {
-                for (let k = 0;k<inputSelected.length;k++) {
-                    inputSelected[k].checked=this.checked;
+                for (let k = 0; k < inputSelected.length; k++) {
+                    inputSelected[k].checked = this.checked;
+                }
+            } else {
+                if (!this.checked) {
+                    this.parentNode.parentNode.parentNode.previousElementSibling.children[0].checked = false;
+                }else{
+                    let itemLTD = this.parentNode.parentNode.parentNode.parentNode;  //LTD
+                    let LTDinput = itemLTD.getElementsByClassName('check');
+                    let ret = 0;
+                    for(let l=0;l<LTDinput.length;l++){
+                        if(LTDinput[l].checked){
+                            ret++;
+                        }
+                        if(ret===LTDinput.length-1){
+                            LTDinput[0].checked=true;
+                        }
+                    }
                 }
             }
             getTotal();
